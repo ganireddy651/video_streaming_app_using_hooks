@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const ListItem = styled.li`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
   list-style-type: none;
 `
@@ -31,7 +33,6 @@ export const NameText = styled.p`
   font-weight: 500;
   margin: 0px;
 `
-
 export const CommentText = styled.p`
   color: #64748b;
   font-family: 'Roboto';
@@ -41,4 +42,22 @@ export const CommentText = styled.p`
 
 export const HorizontalLine = styled.hr`
   border: 1px solid #cbd5e140;
+`
+
+export const FlexContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+`
+
+export const RemoveButton = styled.button`
+  background-color: #fc0307;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 500;
+  height: 35px;
+  width: 90px;
+  border-radius: 5px;
 `

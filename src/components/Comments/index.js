@@ -15,6 +15,7 @@ const Comments = () => {
   const [userName, setUserName] = useState('')
   const [comment, setComment] = useState('')
   const [commentList, setCommentList] = useState([])
+  console.log(commentList.length)
 
   const onChangeUserName = e => {
     setUserName(e.target.value)
@@ -37,6 +38,11 @@ const Comments = () => {
     setComment('')
   }
 
+  const removeComment = id => {
+    const filterComments = commentList.filter(each => each.id !== id)
+    setCommentList(filterComments)
+  }
+
   return (
     <CommentsContainer>
       <CommentsTitle>Comments</CommentsTitle>
@@ -55,11 +61,19 @@ const Comments = () => {
         />
         <CommentButton type="submit">Comment</CommentButton>
       </Form>
-      <CommentsList>
-        {commentList.map(eachItem => (
-          <CommentItem commentDetails={eachItem} key={eachItem.id} />
-        ))}
-      </CommentsList>
+      {commentList.length === 0 ? (
+        <p>No comments to show...</p>
+      ) : (
+        <CommentsList>
+          {commentList.map(eachItem => (
+            <CommentItem
+              commentDetails={eachItem}
+              removeComment={removeComment}
+              key={eachItem.id}
+            />
+          ))}
+        </CommentsList>
+      )}
     </CommentsContainer>
   )
 }
