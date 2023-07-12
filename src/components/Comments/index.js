@@ -62,7 +62,7 @@ const Comments = () => {
         <CommentButton type="submit">Comment</CommentButton>
       </Form>
       {commentList.length === 0 ? (
-        <p>No comments to show...</p>
+        <CommentsTitle message>No comments to show...</CommentsTitle>
       ) : (
         <CommentsList>
           {commentList.map(eachItem => (

@@ -11,8 +11,8 @@ export const CommentsContainer = styled.div`
 export const CommentsTitle = styled.p`
   color: #475569;
   font-family: 'Roboto';
-  font-size: 20px;
-  font-weight: 500;
+  font-size: ${props => (props.message ? '12px' : '20px')};
+  font-weight: ${props => (props.message ? '400' : '500')};
   margin: 0px;
 `
 
